@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+
 using SalesWebMvc.Models;
 
 namespace SalesWebMvc.Data
@@ -15,5 +15,16 @@ namespace SalesWebMvc.Data
         }
 
         public DbSet<SalesWebMvc.Models.Department> Department { get; set; } = default!;
+    }
+
+    public class DbContextOptions<T>
+    {
+    }
+
+    public class DbContext
+    {
+        public DbContext(DbContextOptions<SalesWebMvcContext> options)
+        {
+        }
     }
 }
